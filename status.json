@@ -1,11 +1,11 @@
 {
-  "updatedAt": "2026-11-06T11:29:35.592Z",
+  "updatedAt": "2026-11-06T11:29:38.265Z",
   "sectors": [
     {
       "id": 1,
       "name": "Sektor Blockhaus: Selital-Holzerweg-Brügelweg-Burst-Pfyffe",
       "klassisch": "geschlossen",
-      "skating": "geschlossen",
+      "skating": "fahrbar",
       "bemerkung": "-"
     },
     {
