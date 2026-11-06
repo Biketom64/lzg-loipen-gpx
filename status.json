@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-06T11:22:04.365Z",
+  "updatedAt": "2026-11-06T11:29:35.592Z",
   "sectors": [
     {
       "id": 1,
@@ -25,14 +25,14 @@
     {
       "id": 4,
       "name": "Sektor Höll: Höll Loipe",
-      "klassisch": "geschlossen",
+      "klassisch": "mittel",
       "skating": "geschlossen",
-      "bemerkung": "-"
+      "bemerkung": "-, Achtung: z.T. dünne Schneedecke"
     },
     {
       "id": 5,
       "name": "Sektor Grönegg: Grön Loipe",
-      "klassisch": "geschlossen",
+      "klassisch": "gut",
       "skating": "geschlossen",
       "bemerkung": "-"
     },
@@ -61,7 +61,7 @@
       "id": 9,
       "name": "Sektor Wasserscheide: alle Loipen Schüpfenfluh",
       "klassisch": "geschlossen",
-      "skating": "geschlossen",
+      "skating": "fahrbar",
       "bemerkung": "-"
     }
   ]
