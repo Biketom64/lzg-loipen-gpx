@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-07T16:59:27.032Z",
+  "updatedAt": "2026-11-07T16:59:29.601Z",
   "sectors": [
     {
       "id": 1,
@@ -15,7 +15,7 @@
       "id": 2,
       "name": "Sektor Ottenleue: Aufstieg Pfyffe - Ottenleue Burst",
       "klassisch": "geschlossen",
-      "skating": "geschlossen",
+      "skating": "mittel",
       "bemerkung": "-",
       "km": "3",
       "schwierigkeit": "mittel",
