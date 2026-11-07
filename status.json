@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-07T18:15:39.275Z",
+  "updatedAt": "2026-11-07T18:15:40.931Z",
   "sectors": [
     {
       "id": 1,
@@ -74,7 +74,7 @@
     {
       "id": 8,
       "name": "Sektor Lischboden: Lischboden Schüpfenfluh Nord",
-      "klassisch": "fahrbar",
+      "klassisch": "geschlossen",
       "skating": "geschlossen",
       "bemerkung": "-",
       "km": "3",
