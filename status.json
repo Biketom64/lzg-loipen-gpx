@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-07T14:30:44.930Z",
+  "updatedAt": "2026-11-07T14:30:46.454Z",
   "sectors": [
     {
       "id": 1,
@@ -27,7 +27,7 @@
       "name": "Sektor Höll: Höll Loipe",
       "klassisch": "geschlossen",
       "skating": "geschlossen",
-      "bemerkung": "Achtung: z.T. dünne Schneedecke"
+      "bemerkung": ""
     },
     {
       "id": 5,
