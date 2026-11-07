@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-07T18:21:30.270Z",
+  "updatedAt": "2026-11-07T18:21:31.877Z",
   "sectors": [
     {
       "id": 1,
@@ -65,7 +65,7 @@
       "id": 7,
       "name": "Sektor Gurnigel: Panzerplatte inkl. Verbindung",
       "klassisch": "geschlossen",
-      "skating": "geschlossen",
+      "skating": "mittel",
       "bemerkung": "-",
       "km": "2",
       "schwierigkeit": "mittel",
