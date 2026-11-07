@@ -1,0 +1,217 @@
+<style>
+/* <![CDATA[ */
+    /* Grund-Layout */
+    .lzg-table {
+        width: 100%;
+        min-width: 600px; /* Garantiert, dass die Tabelle auf Mobilgeräten nicht gequetscht wird und scrollbar bleibt */
+        border-collapse: separate;
+        border-spacing: 0;
+        border: 1px solid #e0e0e0;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        background: #ffffff;
+    }
+
+    .lzg-table tbody tr.lzg-data-row {
+        cursor: pointer;
+        transition: background-color 0.15s ease;
+    }
+
+    .lzg-table tbody tr.lzg-data-row:nth-child(even) { 
+        background-color: #fcfcfc; 
+    }
+    
+    .lzg-table tbody tr.lzg-data-row:hover { 
+        background-color: #eaf3ff !important; 
+    }
+
+    /* Aktive/Ausgewählte Tabellenzeile */
+    .lzg-table tbody tr.lzg-row-active {
+        background-color: #dbeafe !important;
+        outline: 2px solid #0055aa;
+    }
+
+    /* Touch-Scrollbar Optimierung */
+    #lzg-table-wrapper::-webkit-scrollbar {
+        height: 6px;
+    }
+    #lzg-table-wrapper::-webkit-scrollbar-thumb {
+        background-color: #0055aa;
+        border-radius: 3px;
+    }
+/* ]]> */
+</style><div id="lzg-table-wrapper" style="width:100%; max-width:100%; overflow-x:auto; -webkit-overflow-scrolling:touch; margin:20px 0; font-family:'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+    <div id="lzg-loader" style="text-align:center; padding:30px; color:#0055aa; font-weight:bold;">
+        Lade Loipendaten...
+    </div>
+</div>
+<script>
+/* <![CDATA[ */
+(function() {
+    const sheetId = '1dOVBiF6VEOW4MRwotZhpAZgxQC5z9_buRq75Gl2niLE';
+    const url = `https://docs.google.com/spreadsheets/d/${sheetId}/gviz/tq?tqx=out:json&_cb=${new Date().getTime()}`;
+
+    fetch(url)
+        .then(r => r.text())
+        .then(txt => {
+            const json = JSON.parse(txt.substring(47).slice(0, -2));
+            const rows = json.table.rows;
+            const cols = json.table.cols;
+
+            let totalOffenKm = 0;
+            let kmColIndex = -1;
+            let nameColIndex = -1;
+
+            let html = '<table class="lzg-table"><thead><tr style="background-color:#0055aa; color:#ffffff;">';
+            
+            // Header erstellen (ab Spalte 1, Spalte 0 ist ID)
+            for (let i = 1; i < cols.length; i++) {
+                if (cols[i] && cols[i].label) {
+                    let lblLower = cols[i].label.toLowerCase();
+                    if (lblLower.includes("km") || lblLower.includes("länge")) kmColIndex = i;
+                    if (lblLower.includes("name") || lblLower.includes("sektor")) nameColIndex = i;
+
+                    let align = (i === nameColIndex) ? "left" : "center";
+                    let padLeft = (i === nameColIndex) ? "20px" : "10px";
+                    
+                    html += `<th style="padding:15px 10px; text-align:${align}; padding-left:${padLeft}; font-weight:600; font-size:0.9em; text-transform:uppercase; border-right:1px solid rgba(255,255,255,0.15);">${cols[i].label}<\/th>`;
+                }
+            }
+            html += '<\/tr><\/thead><tbody>';
+
+            // Zeilen verarbeiten
+            rows.forEach((r, rowIndex) => {
+                if (!r.c) return;
+
+                // ID aus Spalte A (Index 0) holen, Fallback auf Zeilennummer (1-9)
+                let sektorId = rowIndex + 1;
+                if (r.c[0] && r.c[0].v !== null && r.c[0].v !== undefined) {
+                    let parsed = parseInt(r.c[0].v, 10);
+                    if (!isNaN(parsed)) sektorId = parsed;
+                }
+
+                let statusKlassischGeschlossen = false;
+                let statusSkatingGeschlossen = false;
+                let hatKlassischSpalte = false;
+                let hatSkatingSpalte = false;
+                let rowKm = 0;
+
+                // 1. KM- und Zustand-Prüfung vorab
+                for (let i = 1; i < r.c.length; i++) {
+                    let colLabelStr = cols[i] ? (cols[i].label || "").toLowerCase() : "";
+                    let val = r.c[i] ? (r.c[i].f ? r.c[i].f : (r.c[i].v !== null ? r.c[i].v : "")) : "";
+                    let valStr = String(val).toLowerCase().trim();
+                    let isZu = (valStr === "geschlossen" || valStr === "zu");
+
+                    if (colLabelStr.includes("klassisch")) {
+                        hatKlassischSpalte = true;
+                        if (isZu) statusKlassischGeschlossen = true;
+                    }
+
+                    if (colLabelStr.includes("skating")) {
+                        hatSkatingSpalte = true;
+                        if (isZu) statusSkatingGeschlossen = true;
+                    }
+
+                    if (i === kmColIndex) {
+                        let numMatch = String(val).replace(',', '.').match(/[\d.]+/);
+                        if (numMatch) rowKm = parseFloat(numMatch[0]);
+                    }
+                }
+
+                let komplettGeschlossen = false;
+                if (hatKlassischSpalte && hatSkatingSpalte) {
+                    komplettGeschlossen = (statusKlassischGeschlossen && statusSkatingGeschlossen);
+                } else {
+                    komplettGeschlossen = statusKlassischGeschlossen || statusSkatingGeschlossen;
+                }
+
+                if (!komplettGeschlossen && rowKm > 0) {
+                    totalOffenKm += rowKm;
+                }
+
+                // 2. Tabellenzeile mit Klick-Verknüpfung zur Karte
+                html += `<tr class="lzg-data-row" data-sektor="${sektorId}" onclick="handleRowClick(${sektorId}, this)" title="Klicken, um ${sektorId > 0 ? 'Sektor ' + sektorId : 'Loipe'} auf der Karte anzuzeigen">`;
+                
+                for (let i = 1; i < r.c.length; i++) {
+                    let cellData = r.c[i];
+                    let val = cellData ? (cellData.f ? cellData.f : (cellData.v !== null ? cellData.v : "")) : "";
+                    let colLabel = cols[i] ? (cols[i].label || "") : "";
+                    let colLabelStr = colLabel.toLowerCase();
+                    let valStr = String(val).toLowerCase().trim();
+
+                    let align = (i === nameColIndex) ? "left" : "center";
+                    let padLeft = (i === nameColIndex) ? "20px" : "10px";
+                    let weight = (i === nameColIndex) ? "600" : "normal";
+                    
+                    let innerHTML = val;
+                    let styleExtra = "";
+
+                    // A) SPALTE: SCHWIERIGKEIT -> Text farbig
+                    if (colLabelStr.includes("schwierigkeit")) {
+                        if (valStr.includes("einfach") || valStr.includes("leicht")) {
+                            styleExtra = "color:#007bff !important; font-weight:bold;";
+                        } else if (valStr.includes("mittel")) {
+                            styleExtra = "color:#dc3545 !important; font-weight:bold;";
+                        } else if (valStr.includes("schwer")) {
+                            styleExtra = "color:#1a1a1a !important; font-weight:bold;";
+                        }
+                    } 
+                    // B) SPALTEN: ZUSTAND (Klassisch / Skating) & STATUS -> Badges
+                    else {
+                        if (valStr === "gut" || valStr === "offen") {
+                            innerHTML = `<span style="background-color:#28a745; color:white; padding:4px 10px; border-radius:4px; font-weight:bold; font-size:0.85em; display:inline-block; min-width:70px; text-transform:uppercase;">${val}<\/span>`;
+                        } else if (valStr === "mittel") {
+                            innerHTML = `<span style="background-color:#f1c40f; color:#333; padding:4px 10px; border-radius:4px; font-weight:bold; font-size:0.85em; display:inline-block; min-width:70px; text-transform:uppercase;">${val}<\/span>`;
+                        } else if (valStr === "fahrbar") {
+                            innerHTML = `<span style="background-color:#ff8c00; color:white; padding:4px 10px; border-radius:4px; font-weight:bold; font-size:0.85em; display:inline-block; min-width:70px; text-transform:uppercase;">${val}<\/span>`;
+                        } else if (valStr === "geschlossen" || valStr === "zu") {
+                            innerHTML = `<span style="background-color:#dc3545; color:white; padding:4px 10px; border-radius:4px; font-weight:bold; font-size:0.85em; display:inline-block; min-width:70px; text-transform:uppercase;">${val}<\/span>`;
+                        }
+                    }
+
+                    html += `<td data-label="${colLabel}" style="padding:12px 10px; border-bottom:1px solid #eee; border-right:1px solid #f0f0f0; text-align:${align} !important; padding-left:${padLeft} !important; font-weight:${weight}; ${styleExtra}">${innerHTML}<\/td>`;
+                }
+                html += '<\/tr>';
+            });
+
+            // Total-Zeile am Ende
+            html += '<tr style="background-color:#f0f7ff; border-top:2px solid #0055aa;">';
+            for (let i = 1; i < cols.length; i++) {
+                if (cols[i] && cols[i].label) {
+                    let colLabel = cols[i].label;
+                    if (i === nameColIndex) {
+                        html += `<td data-label="${colLabel}" style="padding:15px 10px; text-align:left !important; padding-left:20px !important; font-weight:bold; color:#004488; font-size:1em;">Offenes Loipennetz Total:<\/td>`;
+                    } else if (i === kmColIndex) {
+                        let formattedTotal = (Math.round(totalOffenKm * 10) / 10).toString().replace('.', ',');
+                        html += `<td data-label="${colLabel}" style="padding:15px 10px; text-align:center !important; font-weight:bold; color:#004488; font-size:1em;">${formattedTotal} km<\/td>`;
+                    } else {
+                        html += `<td data-label="${colLabel}" style="padding:15px 10px; text-align:center !important; font-weight:bold; color:#004488;">-<\/td>`;
+                    }
+                }
+            }
+            html += '<\/tr>';
+
+            html += '<\/tbody><\/table>';
+            document.getElementById('lzg-table-wrapper').innerHTML = html;
+        })
+        .catch(e => {
+            console.error(e);
+            document.getElementById('lzg-loader').innerHTML = "Fehler beim Laden der Daten.";
+        });
+})();
+
+// Klick-Handler für Zeilen: Hebt die Zeile optisch hervor und steuert die Karte an
+function handleRowClick(sektorId, rowEl) {
+    // 1. Tabellen-Zeile optisch markieren
+    document.querySelectorAll('.lzg-table tr.lzg-row-active').forEach(r => r.classList.remove('lzg-row-active'));
+    if (rowEl) rowEl.classList.add('lzg-row-active');
+
+    // 2. Karten-Schnittstelle ansprechen
+    if (window.lzgHighlightSector) {
+        window.lzgHighlightSector(sektorId);
+    }
+}
+/* ]]> */
+</script>
