@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-07T18:21:40.809Z",
+  "updatedAt": "2026-11-07T18:22:20.578Z",
   "sectors": [
     {
       "id": 1,
@@ -46,7 +46,7 @@
       "name": "Sektor Grönegg: Grön Loipe",
       "klassisch": "gut",
       "skating": "geschlossen",
-      "bemerkung": "Schneeverwehungen",
+      "bemerkung": "-",
       "km": "2",
       "schwierigkeit": "mittel",
       "hoehendifferenz": "80"
