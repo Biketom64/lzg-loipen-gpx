@@ -1,68 +1,95 @@
 {
-  "updatedAt": "2026-11-07T14:30:47.819Z",
+  "updatedAt": "2026-11-07T14:51:32.950Z",
   "sectors": [
     {
       "id": 1,
       "name": "Sektor Blockhaus: Selital-Holzerweg-Brügelweg-Burst-Pfyffe",
       "klassisch": "geschlossen",
       "skating": "geschlossen",
-      "bemerkung": "-"
+      "bemerkung": "-",
+      "km": "10",
+      "schwierigkeit": "mittel",
+      "hoehendifferenz": "180"
     },
     {
       "id": 2,
       "name": "Sektor Ottenleue: Aufstieg Pfyffe - Ottenleue Burst",
       "klassisch": "geschlossen",
       "skating": "geschlossen",
-      "bemerkung": "-"
+      "bemerkung": "-",
+      "km": "3",
+      "schwierigkeit": "mittel",
+      "hoehendifferenz": "70"
     },
     {
       "id": 3,
       "name": "Sektor Strasse: Süftenen - Untere Gantrischhütte",
       "klassisch": "geschlossen",
       "skating": "geschlossen",
-      "bemerkung": "-"
+      "bemerkung": "-",
+      "km": "7",
+      "schwierigkeit": "einfach",
+      "hoehendifferenz": "50"
     },
     {
       "id": 4,
       "name": "Sektor Höll: Höll Loipe",
       "klassisch": "geschlossen",
       "skating": "geschlossen",
-      "bemerkung": "-"
+      "bemerkung": "-",
+      "km": "4",
+      "schwierigkeit": "mittel",
+      "hoehendifferenz": "120"
     },
     {
       "id": 5,
       "name": "Sektor Grönegg: Grön Loipe",
       "klassisch": "geschlossen",
       "skating": "geschlossen",
-      "bemerkung": "-"
+      "bemerkung": "-",
+      "km": "2",
+      "schwierigkeit": "mittel",
+      "hoehendifferenz": "80"
     },
     {
       "id": 6,
       "name": "Sektor Sortel: Sortel Loipe",
       "klassisch": "geschlossen",
       "skating": "geschlossen",
-      "bemerkung": "-"
+      "bemerkung": "-",
+      "km": "4",
+      "schwierigkeit": "schwer",
+      "hoehendifferenz": "120"
     },
     {
       "id": 7,
       "name": "Sektor Gurnigel: Panzerplatte inkl. Verbindung",
       "klassisch": "geschlossen",
       "skating": "geschlossen",
-      "bemerkung": "-"
+      "bemerkung": "-",
+      "km": "2",
+      "schwierigkeit": "mittel",
+      "hoehendifferenz": "80"
     },
     {
       "id": 8,
       "name": "Sektor Lischboden: Lischboden Schüpfenfluh Nord",
       "klassisch": "geschlossen",
       "skating": "geschlossen",
-      "bemerkung": "-"
+      "bemerkung": "-",
+      "km": "3",
+      "schwierigkeit": "schwer",
+      "hoehendifferenz": "160"
     },
     {
       "id": 9,
       "name": "Sektor Wasserscheide: alle Loipen Schüpfenfluh",
       "klassisch": "geschlossen",
       "skating": "geschlossen",
-      "bemerkung": "-"
+      "bemerkung": "-",
+      "km": "10",
+      "schwierigkeit": "mittel",
+      "hoehendifferenz": "330"
     }
   ]
 }
