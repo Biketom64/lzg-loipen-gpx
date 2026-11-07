@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-07T18:15:47.698Z",
+  "updatedAt": "2026-11-07T18:21:30.270Z",
   "sectors": [
     {
       "id": 1,
@@ -34,7 +34,7 @@
     {
       "id": 4,
       "name": "Sektor Höll: Höll Loipe",
-      "klassisch": "geschlossen",
+      "klassisch": "mittel",
       "skating": "geschlossen",
       "bemerkung": "-",
       "km": "4",
