@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-07T18:21:34.381Z",
+  "updatedAt": "2026-11-07T18:21:38.605Z",
   "sectors": [
     {
       "id": 1,
@@ -44,7 +44,7 @@
     {
       "id": 5,
       "name": "Sektor Grönegg: Grön Loipe",
-      "klassisch": "geschlossen",
+      "klassisch": "gut",
       "skating": "geschlossen",
       "bemerkung": "-",
       "km": "2",
