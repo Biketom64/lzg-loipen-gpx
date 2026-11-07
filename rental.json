@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-07T19:11:46.396Z",
+  "updatedAt": "2026-11-07T19:18:58.901Z",
   "stations": [
     {
       "station": "Skivermietung Schwarenbühl",
@@ -7,7 +7,7 @@
     },
     {
       "station": "Skivermietung Gurnigel Berghaus",
-      "zustand": "geschlossen"
+      "zustand": "offen"
     },
     {
       "station": "Skivermietung Riffenmatt",
