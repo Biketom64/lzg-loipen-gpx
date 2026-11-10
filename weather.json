@@ -1,9 +1,9 @@
 {
   "station": "LZG_Selital (LZG_Innen)",
-  "updatedAt": "2026-11-10T03:27:35.412Z",
+  "updatedAt": "2026-11-10T03:37:35.315Z",
   "temp": 7,
   "humidity": 100,
-  "pressure": 890,
+  "pressure": 889,
   "rain1h": null,
   "rain24h": null,
   "windStrength": null,
