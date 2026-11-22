@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-22T20:50:58.755Z",
+  "updatedAt": "2026-11-22T20:54:04.704Z",
   "sectors": [
     {
       "id": 1,
@@ -54,9 +54,9 @@
     {
       "id": 6,
       "name": "Sektor Sortel: Sortel Loipe",
-      "klassisch": "fahrbar",
-      "skating": "mittel",
-      "bemerkung": "Teilstücke geschlossen",
+      "klassisch": "geschlossen",
+      "skating": "geschlossen",
+      "bemerkung": "-",
       "km": "4",
       "schwierigkeit": "schwer",
       "hoehendifferenz": "120"
