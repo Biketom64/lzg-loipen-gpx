@@ -1,11 +1,11 @@
 {
-  "updatedAt": "2026-11-22T19:49:04.743Z",
+  "updatedAt": "2026-11-22T20:33:25.473Z",
   "sectors": [
     {
       "id": 1,
       "name": "Sektor Blockhaus: Selital-Holzerweg-Brügelweg-Burst-Pfyffe",
-      "klassisch": "geschlossen",
-      "skating": "geschlossen",
+      "klassisch": "fahrbar",
+      "skating": "fahrbar",
       "bemerkung": "",
       "km": "10",
       "schwierigkeit": "mittel",
@@ -26,7 +26,7 @@
       "name": "Sektor Strasse: Süftenen - Untere Gantrischhütte",
       "klassisch": "geschlossen",
       "skating": "geschlossen",
-      "bemerkung": "-",
+      "bemerkung": "Schneeverwehungen",
       "km": "7",
       "schwierigkeit": "einfach",
       "hoehendifferenz": "50"
@@ -56,7 +56,7 @@
       "name": "Sektor Sortel: Sortel Loipe",
       "klassisch": "fahrbar",
       "skating": "mittel",
-      "bemerkung": "-",
+      "bemerkung": "Schneeverwehungen",
       "km": "4",
       "schwierigkeit": "schwer",
       "hoehendifferenz": "120"
@@ -66,7 +66,7 @@
       "name": "Sektor Gurnigel: Panzerplatte inkl. Verbindung",
       "klassisch": "geschlossen",
       "skating": "geschlossen",
-      "bemerkung": "-",
+      "bemerkung": "Achtung: apere Stellen und Steine",
       "km": "2",
       "schwierigkeit": "mittel",
       "hoehendifferenz": "80"
