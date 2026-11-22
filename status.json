@@ -1,11 +1,11 @@
 {
-  "updatedAt": "2026-11-22T20:41:38.418Z",
+  "updatedAt": "2026-11-22T20:50:50.014Z",
   "sectors": [
     {
       "id": 1,
       "name": "Sektor Blockhaus: Selital-Holzerweg-Brügelweg-Burst-Pfyffe",
-      "klassisch": "fahrbar",
-      "skating": "fahrbar",
+      "klassisch": "geschlossen",
+      "skating": "geschlossen",
       "bemerkung": "",
       "km": "10",
       "schwierigkeit": "mittel",
@@ -25,7 +25,7 @@
       "id": 3,
       "name": "Sektor Strasse: Süftenen - Untere Gantrischhütte",
       "klassisch": "geschlossen",
-      "skating": "mittel",
+      "skating": "geschlossen",
       "bemerkung": "",
       "km": "7",
       "schwierigkeit": "einfach",
