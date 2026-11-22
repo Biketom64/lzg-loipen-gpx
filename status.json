@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-22T20:33:42.557Z",
+  "updatedAt": "2026-11-22T20:41:38.418Z",
   "sectors": [
     {
       "id": 1,
@@ -16,7 +16,7 @@
       "name": "Sektor Ottenleue: Aufstieg Pfyffe - Ottenleue Burst",
       "klassisch": "geschlossen",
       "skating": "geschlossen",
-      "bemerkung": "-",
+      "bemerkung": "",
       "km": "3",
       "schwierigkeit": "mittel",
       "hoehendifferenz": "70"
@@ -26,7 +26,7 @@
       "name": "Sektor Strasse: Süftenen - Untere Gantrischhütte",
       "klassisch": "geschlossen",
       "skating": "mittel",
-      "bemerkung": "Achtung: z.T. dünne Schneedecke",
+      "bemerkung": "",
       "km": "7",
       "schwierigkeit": "einfach",
       "hoehendifferenz": "50"
@@ -36,7 +36,7 @@
       "name": "Sektor Höll: Höll Loipe",
       "klassisch": "geschlossen",
       "skating": "geschlossen",
-      "bemerkung": "-",
+      "bemerkung": "",
       "km": "4",
       "schwierigkeit": "mittel",
       "hoehendifferenz": "120"
@@ -46,7 +46,7 @@
       "name": "Sektor Grönegg: Grön Loipe",
       "klassisch": "geschlossen",
       "skating": "geschlossen",
-      "bemerkung": "-",
+      "bemerkung": "",
       "km": "2",
       "schwierigkeit": "mittel",
       "hoehendifferenz": "80"
@@ -56,7 +56,7 @@
       "name": "Sektor Sortel: Sortel Loipe",
       "klassisch": "fahrbar",
       "skating": "mittel",
-      "bemerkung": "Schneeverwehungen",
+      "bemerkung": "",
       "km": "4",
       "schwierigkeit": "schwer",
       "hoehendifferenz": "120"
@@ -66,7 +66,7 @@
       "name": "Sektor Gurnigel: Panzerplatte inkl. Verbindung",
       "klassisch": "geschlossen",
       "skating": "geschlossen",
-      "bemerkung": "Achtung: apere Stellen und Steine",
+      "bemerkung": "",
       "km": "2",
       "schwierigkeit": "mittel",
       "hoehendifferenz": "80"
@@ -76,7 +76,7 @@
       "name": "Sektor Lischboden: Lischboden Schüpfenfluh Nord",
       "klassisch": "geschlossen",
       "skating": "geschlossen",
-      "bemerkung": "-",
+      "bemerkung": "",
       "km": "3",
       "schwierigkeit": "schwer",
       "hoehendifferenz": "160"
@@ -86,7 +86,7 @@
       "name": "Sektor Wasserscheide: alle Loipen Schüpfenfluh",
       "klassisch": "geschlossen",
       "skating": "geschlossen",
-      "bemerkung": "-",
+      "bemerkung": "",
       "km": "10",
       "schwierigkeit": "mittel",
       "hoehendifferenz": "330"
