@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-23T16:24:36.941Z",
+  "updatedAt": "2026-11-23T16:26:28.338Z",
   "sectors": [
     {
       "id": 1,
@@ -84,7 +84,7 @@
     {
       "id": 9,
       "name": "Sektor Wasserscheide: alle Loipen Schüpfenfluh",
-      "klassisch": "gut",
+      "klassisch": "geschlossen",
       "skating": "geschlossen",
       "bemerkung": "",
       "km": "10",
