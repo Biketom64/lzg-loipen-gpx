@@ -1,12 +1,12 @@
 {
-  "updatedAt": "2026-11-27T18:40:44.977Z",
+  "updatedAt": "2026-11-27T18:40:52.723Z",
   "sectors": [
     {
       "id": 1,
       "name": "Sektor Blockhaus: Selital-Holzerweg-Brügelweg-Burst-Pfyffe",
       "klassisch": "geschlossen",
       "skating": "fahrbar",
-      "bemerkung": "",
+      "bemerkung": "noch ohne Pfyffe und Loipen neben der Strasse nutzen",
       "km": "10",
       "schwierigkeit": "mittel",
       "hoehendifferenz": "180"
@@ -76,7 +76,7 @@
       "name": "Sektor Lischboden: Lischboden Schüpfenfluh Nord",
       "klassisch": "geschlossen",
       "skating": "mittel",
-      "bemerkung": "",
+      "bemerkung": "Aufstieg Schüpfenfluh noch geschlossen",
       "km": "3",
       "schwierigkeit": "schwer",
       "hoehendifferenz": "160"
